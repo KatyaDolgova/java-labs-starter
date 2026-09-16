@@ -1,17 +1,10 @@
 package edu.course.lab01;
 
-/**
- * Небольшие методы для первой лабораторной работы.
- */
 public final class CourseToolkit {
 
     private CourseToolkit() {
-        // Утилитарный класс не должен иметь экземпляров.
     }
 
-    /**
-     * Возвращает true, если число четное.
-     */
     public static boolean isEven(int number) {
         return number % 2 == 0;
     }
@@ -20,8 +13,8 @@ public final class CourseToolkit {
             return false;
         }
 
-        for (int divisor = 2; (long) divisor * divisor <= number; divisor++) {
-            if (number % divisor == 0) {
+        for (int i = 2; i *i <= number; i++) {
+            if (number % i == 0) {
                 return false;
             }
         }
@@ -42,10 +35,35 @@ public final class CourseToolkit {
         if (values == null || values.length == 0) {
             throw new IllegalArgumentException("Входные значения не должны быть null или пустыми");
         }
-        long sum = 0;
+        int sum = 0;
         for (int value : values) {
             sum += value;
         }
         return (double) sum / values.length;
+    }
+
+    public static int minForArray(int[] values) {
+        if (values == null || values.length == 0) {
+            throw new IllegalArgumentException("Входные значения не должны быть null или пустыми");
+        }
+        int min = values[0];
+        for (int i = 1; i < values.length; i++) {
+            if (min > values[i]) {
+                min = values[i];
+            }
+        }
+        return min;
+    }
+    public static int maxForArray(int[] values){
+        if (values == null || values.length == 0) {
+            throw new IllegalArgumentException("Входные значения не должны быть null или пустыми");
+        }
+        int max = values[0];
+        for (int i = 1; i < values.length; i++){
+            if (max < values[i]){
+                max = values[i];
+            }
+        }
+        return max;
     }
 }
