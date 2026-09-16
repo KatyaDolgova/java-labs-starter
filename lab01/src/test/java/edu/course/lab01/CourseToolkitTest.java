@@ -21,7 +21,7 @@ class CourseToolkitTest {
     }
     
     @Test
-    void returnsFalseForZero() {
+    void returnsTrueForZero() {
         boolean result = CourseToolkit.isEven(0);
 
         assertTrue(result);
