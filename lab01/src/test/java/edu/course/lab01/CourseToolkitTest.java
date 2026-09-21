@@ -21,7 +21,7 @@ class CourseToolkitTest {
 
         assertFalse(result);
     }
-
+  
     @Test
     void isEven_returnsTrueForNegativeEvenNumber() {
         boolean result = CourseToolkit.isEven(-8);
@@ -135,5 +135,12 @@ class CourseToolkitTest {
         double result = CourseToolkit.maxForArray(new int[]{-1, 5, 1});
 
         assertEquals(5, result);
+    }
+    
+    @Test
+    void returnsTrueForZero() {
+        boolean result = CourseToolkit.isEven(0);
+
+        assertTrue(result);
     }
 }
